@@ -47,7 +47,7 @@ namespace EduFileStock.Controllers
 
         public ActionResult SignIn(string IstifadeciMail, string IstifadeciParol)
         {
-            var c = CreateMD5("levengi" + IstifadeciParol + "levengi");
+            var c = CreateMD5("github/a gore deyisdim" + IstifadeciParol + "github/a gore deyisdim");
             DataTable dt = Sql.Exec($"select * from Istifadeci where IstifadeciMail=N'{IstifadeciMail}' and IstifadeciParol=N'{c}'");
             if (dt.Rows.Count == 0 || IstifadeciMail == null || IstifadeciParol == null)
             {
@@ -93,12 +93,12 @@ namespace EduFileStock.Controllers
                     var kod = a.Next(100000, 9999999);
                     MailMessage mesajim = new MailMessage();
                     SmtpClient istemci = new SmtpClient();
-                    istemci.Credentials = new System.Net.NetworkCredential("zairli.zahir@hotmail.com", "tankionline2017");
+                    istemci.Credentials = new System.Net.NetworkCredential("github/a gore deyisdim@hotmail.com", "github/a gore deyisdim");
                     istemci.Port = 587;
                     istemci.Host = "smtp.live.com";
                     istemci.EnableSsl = true;
                     mesajim.To.Add(IstifadeciMail);
-                    mesajim.From = new MailAddress("zairli.zahir@hotmail.com");
+                    mesajim.From = new MailAddress("github/a gore deyisdim@hotmail.com");
                     mesajim.Subject = "The Code for RePassword";
                     mesajim.Body = kod.ToString();
                     istemci.Send(mesajim);
@@ -126,7 +126,7 @@ namespace EduFileStock.Controllers
             DataTable dt = Sql.Exec($"Select * from Istifadeci where IstifadeciMail=N'{IstifadeciMail}' and IstifadeciQurtar=N'{IstifadeciQurtar}' ");
             if (dt.Rows.Count != 0)
             {
-                var l = CreateMD5("levengi" + IstifadeciParol + "levengi");
+                var l = CreateMD5("github/a gore deyisdim" + IstifadeciParol + "github/a gore deyisdim");
                 if (IstifadeciQurtar == dt.Rows[0][6].ToString() && IstifadeciQurtar != null && IstifadeciQurtar != "0")
                 {
                     Sql.Exec($"Update Istifadeci set IstifadeciParol=N'{l}', IstifadeciQurtar='0' where IstifadeciMail=N'{IstifadeciMail}'");

@@ -11,7 +11,7 @@ namespace EduFileStock.Models
     {
         public static DataTable Exec(string sorgu)
         {
-            string connectionstring = @"Data Source=wdb4.my-hosting-panel.com;Initial Catalog=nurlans1_edufilestock; Persist Security Info=True; User Id=nurlans1_admin; password=Tks7k6@2";
+            string connectionstring = @"Data Source=wdb4.my-hosting-panel.com;Initial Catalog=************; Persist Security Info=True; User Id=*******^^; password=*******";
             SqlConnection sqlcon = new SqlConnection(connectionstring);
             sqlcon.Open();
             SqlCommand srg = new SqlCommand(sorgu, sqlcon);
